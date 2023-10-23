@@ -5,12 +5,13 @@
 parametro_1=40
 parametro_2=10
 
+echo "Parametro_1: $parametro_1 , Parametro_2: $parametro_2"
 echo "==========Operadores Aritmeticos=========="
 
-echo $((parametro_1+parametro_2))
-echo $((parametro_1-parametro_2))
-echo $((parametro_1*parametro_2))
-echo $((parametro_2/parametro_2))
+echo "$parametro_1 + $parametro_2 = "$((parametro_1+parametro_2)) "[Suma]"
+echo "$parametro_1 - $parametro_2 = "$((parametro_1-parametro_2)) "[Resta]"
+echo "$parametro_1 * $parametro_2 = "$((parametro_1*parametro_2)) "[Multiplicacion]"
+echo "$parametro_1 / $parametro_2 = "$((parametro_2/parametro_2)) "[Division]" 
 
 echo "==========Operaciones Logicas=========="
 
