@@ -1,0 +1,9 @@
+glg 
+glgp
+glols
+
+gc
+gcam
+
+gcan!    en el working directory
+gcn!     en el staging area
