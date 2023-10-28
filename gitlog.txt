@@ -2,8 +2,19 @@ glg
 glgp
 glols
 
-gc
-gcam
+------------------------------------------
 
-gcan!    en el working directory
-gcn!     en el staging area
+gc      # gc='git commit -m'
+gcam    # gcam='git commit --all --message'
+
+------------------------------------------
+
+gcn!     
+  # En el staging area
+  #'gcn!'='git commit --verbose --no-edit --amend'
+
+gcan!    
+  # En el working directory  
+  # 'gcan!'='git commit --verbose --all --no-edit --amend'
+
+
