@@ -1,0 +1,11 @@
+
+[Notas mini]==============================
+- Los comandos de la terminal se emplean en sh
+- Al ejecutar el archivo en la terminal funciona como una funcion
+
+[Notas Feinman]===========================
+
+
+[Notas Tecnicas]==========================
+Insercion
+Insercion desde bash
