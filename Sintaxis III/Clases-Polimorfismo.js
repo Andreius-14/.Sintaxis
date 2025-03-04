@@ -1,5 +1,4 @@
-
-class Padre {  
+class Padre {
   tarea () {
     console.log('Tarea del Padre')
   }
