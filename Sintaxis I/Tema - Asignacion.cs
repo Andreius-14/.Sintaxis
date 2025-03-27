@@ -38,26 +38,11 @@ Console.WriteLine(numero); // Imprime: 42
 // │               ??                  │
 // └───────────────────────────────────┘
 // Si es Null , Selecciona Valor por Defecto
-// ?? (Null-coalescing)
-string nombre = null;
-string nombrePorDefecto = "Invitado";
-string mostrar = nombre ?? nombrePorDefecto; // Si es Null Usa el PorDefecto
-Console.WriteLine($"👋 Hola, {mostrar}!");
 
-// Ejemplo con una variable que puede ser null
 string nombre = null;
-string nombrePorDefecto = "Invitado";
-
-// Usamos ?? para asignar un valor por defecto si nombre es null
-string resultado = nombre ?? nombrePorDefecto;
+string resultado = nombre ?? "Respuesta Predeterminada";
 
 Console.WriteLine($"Bienvenido, {resultado}"); // Imprime: Bienvenido, Invitado
-
-// Ahora asignamos un valor a nombre
-nombre = "Ana";
-resultado = nombre ?? nombrePorDefecto;
-
-Console.WriteLine($"Bienvenido, {resultado}"); // Imprime: Bienvenido, Ana
 
 // ┌───────────────────────────────────┐
 // │            Ternario               │
