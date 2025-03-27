@@ -18,7 +18,9 @@ double num5 = 15.12345678; // NO redondea el número
 
 decimal precio = 19.99m; // Precisión decimal (16 bytes)
 
-// => Texto
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃               Extra                   ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 char R = 'A'; // Un solo carácter
 bool L = true; // Verdadero o Falso
@@ -34,9 +36,3 @@ int[] arreglo = { 1, 2, 3 }; // Arreglo
 DateTime fecha = DateTime.Now; // Fecha y hora (struct)
 var inferencia = "C#"; // Tipo inferido (string)
 int? nullable = null; // Entero que permite null
-
-struct Punto
-{
-    public int X,
-        Y;
-} // Estructura personalizada

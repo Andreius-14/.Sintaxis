@@ -17,8 +17,3 @@ namespace create_global_variable
         }
     }
 }
-
-Console.WriteLine(
-    @"C:\source\repos
-(this is where your code goes)"
-);
