@@ -4,7 +4,7 @@
 
 
 // ┌───────────────────────────────────┐
-// │          ASIGNACION               │
+// │                ..                 │
 // └───────────────────────────────────┘
 int[] numbers = new[] { 0, 10, 20, 30, 40, 50 };
 int amountToDrop = numbers.Length / 2;
@@ -19,16 +19,6 @@ int[] all = numbers[..];
 Display(all); // output: 0 10 20 30 40 50
 
 void Display<T>(IEnumerable<T> xs) => Console.WriteLine(string.Join(" ", xs));
-
-// ┌───────────────────────────────────┐
-// │            Ternario               │
-// └───────────────────────────────────┘
-int edad = 20;
-string mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
-Console.WriteLine(mensaje); // Imprime: Mayor de edad
-
-bool estaLloviendo = true;
-Console.WriteLine(estaLloviendo ? "Lleva un paraguas" : "Disfruta del sol");
 
 // ┌───────────────────────────────────┐
 // │                ?                  │
@@ -68,3 +58,13 @@ nombre = "Ana";
 resultado = nombre ?? nombrePorDefecto;
 
 Console.WriteLine($"Bienvenido, {resultado}"); // Imprime: Bienvenido, Ana
+
+// ┌───────────────────────────────────┐
+// │            Ternario               │
+// └───────────────────────────────────┘
+int edad = 20;
+string mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+Console.WriteLine(mensaje); // Imprime: Mayor de edad
+
+bool estaLloviendo = true;
+Console.WriteLine(estaLloviendo ? "Lleva un paraguas" : "Disfruta del sol");

@@ -5,19 +5,13 @@ bool tienePermiso = true;
 
 // 1. if simple
 if (edad >= 18)
-{
     Console.WriteLine("Es mayor de edad");
-}
 
 // 2. if + else
 if (edad < 18)
-{
     Console.WriteLine("Menor de edad");
-}
 else
-{
     Console.WriteLine("Mayor de edad");
-}
 
 // 3. if + else if + else
 if (nota >= 9)
@@ -40,14 +34,4 @@ if (numero > 0)
     {
         Console.WriteLine("Es positivo y par");
     }
-}
-
-// 5. Operador ternario
-string resultado = (edad >= 18) ? "Mayor" : "Menor";
-Console.WriteLine($"Resultado: {resultado}");
-
-// 6. if con operadores lógicos
-if (tienePermiso && edad >= 18)
-{
-    Console.WriteLine("Puede ingresar");
 }
