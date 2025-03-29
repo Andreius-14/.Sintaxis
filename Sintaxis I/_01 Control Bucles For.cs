@@ -1,16 +1,19 @@
-// 1. For clásico (con índice)
+// ┌───────────────────────────────────┐
+// │              BASICO               │
+// └───────────────────────────────────┘
 for (int i = 0; i < 5; i++)
 {
     Console.WriteLine("Clásico: " + i);
 }
 
-// 2. For descendente
 for (int i = 5; i > 0; i--)
 {
     Console.WriteLine("Descendente: " + i);
 }
 
-// 3. For con paso diferente (de 2 en 2)
+// ┌───────────────────────────────────┐
+// │               MEDIO               │
+// └───────────────────────────────────┘
 for (int i = 0; i <= 10; i += 2)
 {
     Console.WriteLine("Paso de 2: " + i);
@@ -21,6 +24,10 @@ for (int i = 0, j = 10; i < j; i++, j--)
 {
     Console.WriteLine($"i = {i}, j = {j}");
 }
+
+// ┌───────────────────────────────────┐
+// │             AVANZADO              │
+// └───────────────────────────────────┘
 
 // 5. For anidado (doble bucle)
 for (int i = 1; i <= 3; i++)
@@ -36,3 +43,23 @@ for (int i = 0; i < 10 && i != 5; i++)
 {
     Console.WriteLine("Condición compleja: " + i);
 }
+
+// ┌───────────────────────────────────┐
+// │              FOREACH              │
+// └───────────────────────────────────┘
+
+// [Array]
+string[] frutas = { "Manzana", "Banana", "Uva" };
+
+List<int> numeros = new List<int> { 10, 20, 30 };
+
+Dictionary<string, int> edades = new Dictionary<string, int>() { { "Ana", 25 }, { "Luis", 30 } };
+
+foreach (string fruta in frutas)
+    Console.WriteLine(fruta);
+
+foreach (var numero in numeros)
+    Console.WriteLine(numero * 2); // Multiplica cada número por 2
+
+foreach (KeyValuePair<string, int> entrada in edades)
+    Console.WriteLine($"{entrada.Key}: {entrada.Value} años");

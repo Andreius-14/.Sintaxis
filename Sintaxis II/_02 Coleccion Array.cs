@@ -1,3 +1,7 @@
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃                BASICO                 ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 // Primer bloque
 int[] myArray1 = new int[] { 1, 2, 3 };
 int[] myArray2 = new[] { 1, 2, 3 };
@@ -15,28 +19,6 @@ string[] fraudulentOrderIDs = new string[3];
 fraudulentOrderIDs[0] = "A123";
 fraudulentOrderIDs[1] = "B456";
 fraudulentOrderIDs[2] = "C789";
-
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-//┃            Array Objetos              ┃
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-// Antes
-Person[] people =
-{
-    new Person("David", "Martinez", "Pérez"),
-    new Person("Juan", "Pérez", "Martinez"),
-    new Person("Antonio", "Martin", "Mora"),
-    // ...
-};
-
-// Después
-Person[] people =
-[
-    new("David", "Martinez", "Pérez"),
-    new("Juan", "Pérez", "Martinez"),
-    new("Antonio", "Martin", "Mora"),
-    // ...
-];
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 //┃            Array Simbolo              ┃
