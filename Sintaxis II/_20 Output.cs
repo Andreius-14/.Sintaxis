@@ -9,16 +9,6 @@ Console.WriteLine("El resultado");
 Console.Clear();
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-//┃                INPUT                  ┃
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-// TECLA PRESIONADA
-Console.ReadKey();
-
-// LINEA
-Console.ReadLine();
-
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 //┃               ESPECIAL                ┃
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
