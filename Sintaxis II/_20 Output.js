@@ -76,6 +76,10 @@ console.groupEnd();
     Edad: 25
 */
 
+// ┌────────────────────────
+// │  => CONTABILIZA EL TIEMPO - DURACION
+// └────────────────────────
+
 // console.time() y timeEnd() - Mide tiempo
 console.time("Ciclo");
 for (let i = 0; i < 1000; i++) {}
