@@ -4,58 +4,45 @@
 
 // Scope define dónde una variable está disponible
 
+// Alcance de const - let - var
+// => var --> No respeta, Obsoleto Actualmente
+// => let --> respeta
+// => const --> respeta
+
 // ┌───────────────────────────────────┐
 // │      1. Scope Global              │
 // └───────────────────────────────────┘
-const globalVar = 'Soy global' // Accesible en todo el archivo
-function verGlobal () {
-  console.log(globalVar) // "Soy global" (visible aquí)
-}
-verGlobal()
+const globalVar = "Global"; // Global : Puede Llamarse desde mismo nivel o inferiores
 
-// ┌───────────────────────────────────┐
-// │      2. Scope Local (Function)    │
-// └───────────────────────────────────┘
-function scopeLocal () {
-  const localVar = 'Soy local' // Solo existe dentro de esta función
-  console.log(localVar) // "Soy local"
+function verGlobal() {
+  const localVar = "Local"; // Local : No puede ser llamado desde Afuera
 }
-scopeLocal()
-// console.log(localVar);        // Error: localVar no está definida fuera
-
-// ┌───────────────────────────────────┐
-// │      3. Scope de Bloque           │
-// └───────────────────────────────────┘
-if (true) {
-  const bloqueVar = 'Soy de bloque' // Solo vive en este bloque con let/const
-  var noBloque = 'No respeto bloques' // var ignora bloques, sube al scope superior
-  console.log(bloqueVar) // "Soy de bloque"
-}
-// console.log(bloqueVar);              // Error: no accesible fuera del bloque
-console.log(noBloque) // "No respeto bloques" (var es global o funcional)
+verGlobal();
 
 // ┌───────────────────────────────────┐
 // │      4. Anidamiento               │
 // └───────────────────────────────────┘
-function exterior () {
-  const externa = 'Estoy afuera'
-  function interior () {
-    const interna = 'Estoy adentro'
-    console.log(externa) // "Estoy afuera" (accede al scope superior)
-    console.log(interna) // "Estoy adentro"
+// Funcion 01
+function exterior() {
+  const externa = "Estoy afuera";
+  // Funcion 02
+  function interior() {
+    const interna = "Estoy adentro";
+    console.log(externa); // "Estoy afuera" (accede al scope superior)
+    console.log(interna); // "Estoy adentro"
   }
-  interior()
+  interior();
   // console.log(interna);  // Error: interna no está disponible aquí
 }
-exterior()
+exterior();
 
 // ┌───────────────────────────────────┐
 // │      5. let vs var vs const       │
 // └───────────────────────────────────┘
-const vieja = 'Soy var' // Scope funcional, redeclarable
-let moderna = 'Soy let' // Scope de bloque, reasignable
-const fija = 'Soy const' // Scope de bloque, no reasignable
-moderna = 'Cambié' // Ok
+const vieja = "Soy var"; // Scope funcional, redeclarable
+let moderna = "Soy let"; // Scope de bloque, reasignable
+const fija = "Soy const"; // Scope de bloque, no reasignable
+moderna = "Cambié"; // Ok
 // fija = "No puedo";     // Error: const no permite reasignación
 
-console.log(vieja, moderna, fija)
+console.log(vieja, moderna, fija);

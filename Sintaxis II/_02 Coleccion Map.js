@@ -1,43 +1,40 @@
-// ┌───────────────────────────────────┐
-// │      1. Creación y Uso Básico  │
-// └───────────────────────────────────┘
-// Colección de pares clave-valor, claves de cualquier tipo
-const mapa = new Map()
-mapa.set('nombre', 'Ana') // Clave string
-mapa.set(1, 'primero') // Clave number
-mapa.set({ id: 42 }, 'objeto') // Clave objeto
-console.log(mapa.get('nombre')) // "Ana"
-console.log(mapa.size) // 3
+// ┌────────────────────────
+// │  => EXAMPLE - 01
+// └────────────────────────
+const map1 = new Map([
+  ["uno", 1],
+  ["dos", 2],
+  ["tres", 3],
+]);
 
-// ┌───────────────────────────────────┐
-// │      2. Métodos Principales    │
-// └───────────────────────────────────┘
-mapa.set('edad', 25) // Agrega o actualiza
-console.log(mapa.has('edad')) // true (verifica existencia)
+console.log(map1); // Map { uno: 1, dos: 2, tres: 3 }
 
-mapa.delete('edad') // Elimina
-console.log(mapa.has('edad')) // false
+// ┌────────────────────────
+// │  => EXAMPLE - 02
+// └────────────────────────
+const map2 = new Map();
 
-mapa.clear() // Borra todo
-console.log(mapa.size) // 0
+// Añadir elementos
+map2.set("uno", 1);
+map2.set("dos", 2);
+map2.set("tres", 3);
+
+// Iterar sobre el mapa
+map.forEach((key, value) => {
+  console.log(`${key}: ${value}`);
+});
 
 // ┌───────────────────────────────────┐
 // │      3. Iteración              │
 // └───────────────────────────────────┘
-const nuevoMapa = new Map([['a', 1], ['b', 2]])
+const nuevoMapa = new Map([
+  ["a", 1],
+  ["b", 2],
+]);
 for (const [clave, valor] of nuevoMapa) {
-  console.log(`${clave}: ${valor}`) // "a: 1", "b: 2"
+  console.log(`${clave}: ${valor}`); // "a: 1", "b: 2"
 }
 nuevoMapa.forEach((valor, clave) => {
-  console.log(`${clave} -> ${valor}`) // "a -> 1", "b -> 2"
-})
-console.log([...nuevoMapa]) // [["a", 1], ["b", 2]]
-
-// ┌───────────────────────────────────┐
-// │      4. Ventajas sobre Object  │
-// └───────────────────────────────────┘
-// Claves no limitadas a strings, orden preservado
-const objClave = { tipo: 'clave' }
-const mapa2 = new Map()
-mapa2.set(objClave, 'valor')
-console.log(mapa2.get(objClave)) // "valor"
+  console.log(`${clave} -> ${valor}`); // "a -> 1", "b -> 2"
+});
+console.log([...nuevoMapa]); // [["a", 1], ["b", 2]]
