@@ -28,3 +28,10 @@ print(z)
 diccionario = {"nombre": "Juan", "edad": 30}
 nombre, edad = diccionario.values()
 print(nombre, edad)  # Resultado: Juan 30
+
+
+# ┌────────────────────────
+# │  => DESESTRUCTURACION Y *
+# └────────────────────────
+
+a, b, *resto = (1, 2, 3, 4, 5)
