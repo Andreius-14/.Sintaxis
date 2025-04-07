@@ -18,9 +18,9 @@ console.log(despedir("Juan")); // "Adiós, Juan"
 const sumar = (a, b) => a + b;
 console.log(sumar(2, 3)); // 5
 
-// ┌────────────────────────
-// │  => PARAMETROS
-// └────────────────────────
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃             PARAMETROS                ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 // ┌────
 // │  => PREDETERMINADOS
@@ -39,30 +39,9 @@ function test(a, b = 3, c = 42) {
 test(5); // 50
 
 // ┌────
-// │  => DESORDENADOS
+// │  => SPREAD
 // └────
 
-function saludar(nombre = "Invitado", apellido = "", edad = "Desconocida") {
-  console.log(`Hola ${nombre} ${apellido}. Tienes ${edad} años.`);
-}
-
-// Pasando Paremtros Especiales
-const datos = ["Juan", "Pérez", 30];
-saludar(...datos); // array
-saludar({ edad: 30, nombre: "Juan" }); // Objeto
-// ┌────
-// │  => SuperDesordenado
-// └────
-function salu(nombre, opciones) {
-  const apellido = opciones?.apellido || "";
-  const edad = opciones?.edad || "Desconocida";
-
-  console.log(`Hola ${nombre} ${apellido}. Tienes ${edad} años.`);
-}
-
-salu("Juan", { edad: 30, apellido: "Pérez" }); // Orden desordenado
-
-// => SPREAD
 function sum(...args) {
   let sum = 0;
   for (let arg of args) sum += arg;
@@ -70,6 +49,42 @@ function sum(...args) {
 }
 
 let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃                Input                  ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+function saludar(nombre = "Invitado", apellido = "", edad = "Desconocida") {
+  console.log(`Hola ${nombre} ${apellido}. Tienes ${edad} años.`);
+}
+
+function salu(nombre, opciones) {
+  const apellido = opciones?.apellido || "";
+  const edad = opciones?.edad || "Desconocida";
+
+  console.log(`Hola ${nombre} ${apellido}. Tienes ${edad} años.`);
+}
+
+// ┌────
+// │  => Coleccion
+// └────
+
+// [Array]
+const datos = ["Juan", "Pérez", 30];
+saludar(...datos);
+
+// [Objeto]
+saludar({ edad: 30, nombre: "Juan" });
+
+// ┌────
+// │  => Mixto
+// └────
+
+salu("Juan", { edad: 30, apellido: "Pérez" }); // Orden desordenado
+
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃               ESPECIAL                ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 // ┌────
 // │  => FUNCION COMO PARAMETROS
