@@ -25,6 +25,11 @@ void Display<T>(IEnumerable<T> xs) => Console.WriteLine(string.Join(" ", xs));
 // └───────────────────────────────────┘
 // Sin Valor Predeterminado Sera Null
 // Declaramos un int nullable
+
+// ┌───────────────────
+// │  => ? NUMBER
+// └───────────────────
+
 int? numero = null;
 
 Console.WriteLine(numero.HasValue); // Imprime: False (no tiene valor)
@@ -33,6 +38,24 @@ Console.WriteLine(numero); // Imprime: (nada, porque es null)
 numero = 42;
 Console.WriteLine(numero.HasValue); // Imprime: True (tiene valor)
 Console.WriteLine(numero); // Imprime: 42
+
+// ┌───────────────────
+// │  => ? STRING
+// └───────────────────
+string a = null; // Warning: Assignment of null to non-nullable
+string? s = null;
+
+WriteLine($"The string is {s}"); // Warning: Possible null reference exception.
+WriteLine($"The string is {s ?? "null"}");
+
+// Operador de acceso condicional a miembros '?.':
+// Objeto?.Miembro;
+
+// Equivalente a:
+if (Objeto != null)
+{
+    Objeto.Miembro;
+}
 
 // ┌───────────────────────────────────┐
 // │               ??                  │
@@ -43,6 +66,22 @@ string nombre = null;
 string resultado = nombre ?? "Respuesta Predeterminada";
 
 Console.WriteLine($"Bienvenido, {resultado}"); // Imprime: Bienvenido, Invitado
+
+// ┌───────────────────
+// │  => ??=
+// └───────────────────
+
+string nombre = null;
+
+nombre ??= "Usuario Desconocido";
+
+Console.WriteLine(nombre); // Salida: Usuario Desconocido
+
+string saludo = "Hola";
+
+saludo ??= "Saludo Alternativo";
+
+Console.WriteLine(saludo); // Salida: Hola
 
 // ═════════════════════════════════════
 //        Operadores Especiales

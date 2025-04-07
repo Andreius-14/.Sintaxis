@@ -7,28 +7,7 @@ public override string ToString() => $"{fname} {lname}".Trim();
 static double divideNumeros(double num1, int num2) => num1 / num2;
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-//┃              Parametros               ┃
-//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-// => Parametros - Multiples
-static double Suma(int num1, double num2, double num3 = 0)
-{
-    return num1 + num2 + num3;
-}
-
-// => Parametros - Predeterminado
-static void MyMethod(string country = "Norway")
-{
-    Console.WriteLine(country);
-}
-
-MyMethod("Sweden");
-MyMethod("India");
-MyMethod();
-MyMethod("USA");
-
-//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-//┃                Output                 ┃
+//┃                Output                 ┃  VOID
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 // => Uso de Return
@@ -41,6 +20,31 @@ static void Main(string[] args)
 {
     Console.WriteLine(MyMethod(3));
 }
+
+//┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+//┃              Parametros               ┃
+//┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+// ┌────
+// │  => MULTIPLES
+// └────
+static double Suma(int num1, double num2, double num3 = 0)
+{
+    return num1 + num2 + num3;
+}
+
+// ┌────
+// │  => PREDETERMINADOS
+// └────
+static void MyMethod(string country = "Norway")
+{
+    Console.WriteLine(country);
+}
+
+MyMethod("Sweden");
+MyMethod("India");
+MyMethod();
+MyMethod("USA");
 
 //┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 //┃                Input                  ┃

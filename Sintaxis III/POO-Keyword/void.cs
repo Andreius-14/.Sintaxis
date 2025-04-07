@@ -1,7 +1,7 @@
 // => Metodos
 using System;
 
-// Void => Con contiene un Return
+// Void => No contiene un Return
 
 class Program
 {

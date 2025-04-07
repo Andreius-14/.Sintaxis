@@ -81,3 +81,13 @@ log($"x: {x}, y: {y}"); // x: 6, y: 5
 
 int z = ++x; // z = 7 (incrementa primero, luego asigna)
 log($"x: {x}, z: {z}"); // x: 7, z: 7
+
+// ┌───────────────────────────────────┐
+// │            Ternario               │
+// └───────────────────────────────────┘
+int edad = 20;
+string mensaje = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+Console.WriteLine(mensaje); // Imprime: Mayor de edad
+
+bool estaLloviendo = true;
+Console.WriteLine(estaLloviendo ? "Lleva un paraguas" : "Disfruta del sol");

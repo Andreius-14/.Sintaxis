@@ -2,6 +2,7 @@
 //┃                 BASICO                ┃
 //┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
+
 var persona = ("Juan", 25); // Tupla con string e int
 var estudiante = (Nombre: "Ana", Edad: 20, Aprobado: true);
 var producto = ("Laptop", 1200.99m);
