@@ -69,11 +69,11 @@ function salu(nombre, opciones) {
 // │  => Coleccion
 // └────
 
-// [Array]
+// [Array] - Preferible usar Spread
 const datos = ["Juan", "Pérez", 30];
 saludar(...datos);
 
-// [Objeto]
+// [Objeto] - No Tiene Sentido a menos que lo desestrcture
 saludar({ edad: 30, nombre: "Juan" });
 
 // ┌────
