@@ -3,7 +3,8 @@
 Cada Lenguaje se encuetra en su respectiva rama.. para mantener su hisotorial de commit
 
 ### Shellscript
-<img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/a5533bb4-087f-4482-b8d5-55da42e250f8" />
+<img width="1004" height="632" alt="image" src="https://github.com/user-attachments/assets/6f3605db-c899-4027-8595-ac4dd3e6630c" />
+
 
 ### Csharp
 <img width="1365" height="767" alt="image" src="https://github.com/user-attachments/assets/88130bf9-e755-4e35-8a02-b6a4476a4530" />
