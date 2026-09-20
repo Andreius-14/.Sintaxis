@@ -1,0 +1,8 @@
+Nuestro archivo Typescript convierte a Js con 
+
+tsc nameFileTypescript.ts 
+
+
+convierte y crea nuevo archivo  
+
+.js
