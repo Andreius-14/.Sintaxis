@@ -13,5 +13,11 @@ print(n) -- 2
 local phrase = "I am"
 local name = "Sid"
 
+--
+
 print(phrase .. " " .. name) -- I am Sid
 print("I am " .. "Sid")
+
+-- Juego
+--
+print("Somos:" .. "\n<><<<<>>>><>" .. "\n:somoS")
