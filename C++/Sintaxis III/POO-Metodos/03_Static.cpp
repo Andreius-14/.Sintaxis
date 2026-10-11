@@ -60,4 +60,5 @@ int main(int argc, char *argv[]) {
 /*
  * Se define y se accede dede todas las intancias
  * - las variabless statis se definen fuera de la clase
+ * - Mire me facilita tener un contador de cuantas veces se uso una clase
  * */

@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 /**
  * Enum
  *  - las palabras sin asignacion . se le asgina numeros segun su orden
- *  -
+ *  - Se instancia de forma normla basicamente
  *
  * *
  * */
