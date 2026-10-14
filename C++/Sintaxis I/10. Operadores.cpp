@@ -14,6 +14,13 @@
 
 using namespace std;
 
+double calcularArea(int r) {
+   return 3.1416 * r * r;
+}
+double calcularAreaEsfera(int r) {
+   return 4 * 3.1416 * r * r;
+}
+
 int main(int argc, char *argv[]) {
 
   int a = 2;

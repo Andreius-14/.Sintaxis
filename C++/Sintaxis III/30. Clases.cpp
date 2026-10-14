@@ -1,7 +1,27 @@
 #include <iostream>
 #include <string>
 
+// ==> Idea
+// Eres un dios al crear Clases
+//
+//
+//
+
+// ==> Sobrecarga de Contructor
+
 using namespace std;
+
+class Cat {
+public:
+  // ==> Variable
+  string Name;
+  // ==> Contructor
+  Cat() { Name = "Guapo"; }
+  Cat(string iName) { Name = iName; }
+
+  // ==> funciones
+  void Meow() { cout << "Miau Miau" << endl; }
+};
 
 class Persona {
 public:

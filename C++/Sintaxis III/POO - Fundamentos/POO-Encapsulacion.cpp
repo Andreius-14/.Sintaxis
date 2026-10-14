@@ -1,22 +1,26 @@
 
-//          ╭─────────────────────────────────────────────────────────╮
-//          │                      * El Guardian                      │
-//          ╰─────────────────────────────────────────────────────────╯
-//
+// ==> Encapsulamiento
 
 #include <iostream>
 #include <string>
 
-//          ╭─────────────────────────────────────────────────────────╮
-//          │                 Constructo - Destructor                 │
-//          ╰─────────────────────────────────────────────────────────╯
-
-/* El ciclo de la vidade un objeto*/
-/**  Desear Impedir modificar una variablde desde la Instancia
- *
- *
- * */
 using namespace std;
+
+class Dog {
+public:
+  Dog(string Name, string BarkType) {
+    mName = Name;
+    mBark = BarkType;
+  }
+  // ==> Encapsulamiento
+  string GetName() { return mName; }
+  void SetName(string NewName) { mName = NewName; }
+  void Bark() { cout << mBark << endl; }
+
+private:
+  string mName;
+  string mBark;
+};
 
 class Persona {
 
@@ -43,16 +47,42 @@ public:
 
 int main(int argc, char *argv[]) {
 
-  // Instancia
-  Persona *p = new Persona("Diana", 10);
-  Persona *p2 = new Persona("Ximena", 20);
+  // ==> Prueba - Dog
 
-  p->saludar();
-  p2->saludar();
+  Dog PerroUno("foofers", "berk");
+  PerroUno.SetName("Poopy");
 
-  // Eliminar
-  // Limpia memoria
-  delete p2;
+  Dog PerroDos("Comodoro", "woof");
 
+  PerroUno.Bark();
+  PerroDos.Bark();
+
+  // ==> Prueba - Persona
+
+  // // Instancia
+  // Persona *p = new Persona("Diana", 10);
+  // Persona *p2 = new Persona("Ximena", 20);
+  //
+  // p->saludar();
+  // p2->saludar();
+  //
+  // // Eliminar
+  // // Limpia memoria
+  // delete p2;
+  //
   return 0;
 }
+
+//          ╭─────────────────────────────────────────────────────────╮
+//          │                      * El Guardian                      │
+//          ╰─────────────────────────────────────────────────────────╯
+//
+//// ╭─────────────────────────────────────────────────────────╮ ─────
+// │                 Constructo - Destructor                 │
+// ╰─────────────────────────────────────────────────────────╯
+//
+/* El ciclo de la vidade un objeto*/
+/**  Desear Impedir modificar una variablde desde la Instancia
+ *
+ *
+ * */

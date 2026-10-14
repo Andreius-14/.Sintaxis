@@ -1,4 +1,9 @@
+// Entrada cout
+// Salida cin
 #include <iostream>
+
+// Guardar datos en archivos.
+#include <fstream>
 
 #include <string>
 
@@ -17,5 +22,13 @@ int main(int argc, char *argv[]) {
   cout << "Tamaño ==> " << txt.size() << endl;
   cout << "Entero ==> " << stoi(txtnum) << endl;
   cout << "Flotante ==> " << stof(txtfloat) << endl;
+
+  // crear archivo
+  fstream MyFile("GameData.txt");
+
+  if (MyFile.is_open()) {
+  }
+
+  MyFile.close();
   return 0;
 }

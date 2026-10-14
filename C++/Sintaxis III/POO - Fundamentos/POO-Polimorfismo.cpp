@@ -4,7 +4,7 @@
 //          ╭─────────────────────────────────────────────────────────╮
 //          │                        Polimorfismo   │
 //          ╰─────────────────────────────────────────────────────────╯
-
+// => La Herencia y sobreescritura de una funcion
 using namespace std;
 
 class Animal {

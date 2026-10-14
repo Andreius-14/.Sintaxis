@@ -13,6 +13,31 @@
 
 using namespace std;
 
+class Mage {
+protected:
+  int mana, hp, power;
+
+public:
+  Mage(int iMana, int iHP, int iPower) {
+    mana = iMana;
+    hp = iHP;
+    power = iPower;
+  }
+  void Spell() { cout << "Fireworks: Nivel " << power << endl; }
+};
+
+// => Herencia :
+//  se debe heredar el contructor explicitamente
+//  convertir los private => protecter si seran heredaodos
+class IceMage : public Mage {
+public:
+  IceMage(int iMana, int iHP, int iPower) : Mage(iMana, iHP, iPower) {
+    mana = iMana;
+    hp = iHP;
+    power = iPower + 10;
+  }
+};
+
 class Animal {
 protected:
   static int numero_animales;
@@ -55,6 +80,9 @@ public:
 };
 
 int main(int argc, char *argv[]) {
+
+  // ==> Animal
+  // ──────────────────────────────────────────────────────────────────────
   Animal *a = new Animal();
   Herviboro *h = new Herviboro();
 
@@ -68,6 +96,14 @@ int main(int argc, char *argv[]) {
   delete a;
 
   cout << "numero de animales" << Animal::obtenerNumeroAnimales() << endl;
+
+  // Mago
+  // ──────────────────────────────────────────────────────────────────────
+  Mage Gandalf(100, 10, 20);
+  IceMage Sauruman(100, 10, 20);
+
+  Gandalf.Spell();
+  Sauruman.Spell();
 
   return 0;
 }
