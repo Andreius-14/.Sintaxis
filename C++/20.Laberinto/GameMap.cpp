@@ -1,5 +1,5 @@
-#include "GameMap.h"
-#include "MapCell.h"
+#include "Headers/GameMap.h"
+#include "Headers/MapCell.h"
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
@@ -12,6 +12,7 @@ GameMap::GameMap() {
   //
   PlayerCell = NULL;
   LoadMapFromFile();
+  isGameOver = false;
 }
 
 void GameMap::Draw() {
@@ -21,7 +22,7 @@ void GameMap::Draw() {
 
   for (int i = 0; i < 15; i = i + 1) {
     for (int j = 0; j < 10; j = j + 1) {
-      cout << "[" << cells[i][j].id << "] ";
+      cout << " " << cells[i][j].id << " ";
     };
     cout << endl;
   };
@@ -32,7 +33,7 @@ void GameMap::Draw() {
 void GameMap::DrawIntro() {
 
   string line;
-  ifstream MyFile("Intro.txt");
+  ifstream MyFile("Source/Intro.txt");
 
   if (MyFile.is_open()) {
     while (getline(MyFile, line)) {
@@ -45,19 +46,20 @@ void GameMap::DrawIntro() {
     cout << "Error Banner!" << endl;
   }
 }
-bool GameMap::SetPlayerCell(int PlayerX, int PlayerY) {
 
-  if (cells[PlayerY][PlayerX].isBlocked() == false) {
-    if (PlayerCell != NULL) {
-      PlayerCell->id = 0;
+void GameMap::DrawVictory() {
+
+  string line;
+  ifstream MyFile("Source/Victory.txt");
+
+  if (MyFile.is_open()) {
+    while (getline(MyFile, line)) {
+      cout << line << endl;
     }
-    PlayerCell = &cells[PlayerY][PlayerX];
-    PlayerCell->id = '3';
-    return true;
-  } else {
-    return false;
+
+    cout << "Has Alcanzado la Victoria!" << endl;
+    cin >> line;
   }
-  // cout << "Ubicacion: x-y : "<< PlayerX << "," << PlayerY;
 }
 
 void GameMap::LoadMapFromFile() {
@@ -69,7 +71,7 @@ void GameMap::LoadMapFromFile() {
 
   string line;
   int row = 0;
-  ifstream MyFile("Map.txt");
+  ifstream MyFile("Source/Map.txt");
 
   if (MyFile.is_open()) {
     cout << "Prueba de dibujo" << endl;
@@ -92,3 +94,27 @@ void GameMap::LoadMapFromFile() {
     cout << "Error No se abrio el archivo!" << endl;
   }
 };
+
+bool GameMap::SetPlayerCell(int PlayerX, int PlayerY) {
+
+  if (cells[PlayerY][PlayerX].isBlocked() == false) {
+
+    if (cells[PlayerY][PlayerX].id == '$') {
+      DrawVictory();
+      isGameOver = true;
+      return true;
+    } else {
+      if (PlayerCell != NULL) {
+        PlayerCell->id = 0;
+      }
+      PlayerCell = &cells[PlayerY][PlayerX];
+      PlayerCell->id = '3';
+    };
+
+    return true;
+  } else {
+    return false;
+  }
+  // cout << "Ubicacion: x-y : "<< PlayerX << "," << PlayerY;
+}
+

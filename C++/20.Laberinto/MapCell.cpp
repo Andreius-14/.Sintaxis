@@ -1,4 +1,4 @@
-#include "MapCell.h"
+#include "Headers/MapCell.h"
 MapCell::MapCell() { id = 0; }
 
 bool MapCell::isBlocked() {

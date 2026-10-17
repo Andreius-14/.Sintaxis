@@ -1,20 +1,21 @@
 #include <iostream>
 
-#include "source/GameMap.h"
-#include "source/player.h"
+#include "Headers/GameMap.h"
+#include "Headers/player.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
 
-  bool isGameOver = false;
   GameMap Map;
   Player Hero;
 
   cout << "Inicia el Juego" << endl;
 
   Map.DrawIntro();
-  while (isGameOver == false) {
+  Map.Draw();
+
+  while (Map.isGameOver == false) {
 
     Hero.CallInput();
     if (Map.SetPlayerCell(Hero.x, Hero.y)) {

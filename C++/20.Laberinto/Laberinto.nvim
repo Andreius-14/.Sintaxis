@@ -1,0 +1,292 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+doautoall SessionLoadPre
+silent only
+silent tabonly
+cd ~/Github/.Sintaxis/C++/20.Laberinto
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+set shortmess+=aoO
+badd +31 GameMap.cpp
+badd +25 main.cpp
+badd +6 MapCell.cpp
+badd +12 player.cpp
+badd +20 note.md
+badd +25 Headers/GameMap.h
+badd +0 Headers/MapCell.h
+badd +0 Headers/player.h
+argglobal
+%argdel
+$argadd .
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit main.cpp
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 25 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 56 + 56) / 113)
+exe '2resize ' . ((&lines * 24 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 56 + 56) / 113)
+exe '3resize ' . ((&lines * 36 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 56 + 56) / 113)
+exe '4resize ' . ((&lines * 13 + 26) / 53)
+exe 'vert 4resize ' . ((&columns * 56 + 56) / 113)
+argglobal
+balt GameMap.cpp
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+8
+sil! normal! zo
+let s:l = 25 - ((20 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 25
+normal! 08|
+wincmd w
+argglobal
+if bufexists(fnamemodify("player.cpp", ":p")) | buffer player.cpp | else | edit player.cpp | endif
+if &buftype ==# 'terminal'
+  silent file player.cpp
+endif
+balt main.cpp
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+12
+sil! normal! zo
+18
+sil! normal! zo
+let s:l = 12 - ((5 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 12
+normal! 012|
+wincmd w
+argglobal
+if bufexists(fnamemodify("GameMap.cpp", ":p")) | buffer GameMap.cpp | else | edit GameMap.cpp | endif
+if &buftype ==# 'terminal'
+  silent file GameMap.cpp
+endif
+balt player.cpp
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 31 - ((22 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 31
+normal! 02|
+wincmd w
+argglobal
+if bufexists(fnamemodify("MapCell.cpp", ":p")) | buffer MapCell.cpp | else | edit MapCell.cpp | endif
+if &buftype ==# 'terminal'
+  silent file MapCell.cpp
+endif
+balt GameMap.cpp
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 6 - ((5 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 6
+normal! 016|
+wincmd w
+4wincmd w
+exe '1resize ' . ((&lines * 25 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 56 + 56) / 113)
+exe '2resize ' . ((&lines * 24 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 56 + 56) / 113)
+exe '3resize ' . ((&lines * 36 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 56 + 56) / 113)
+exe '4resize ' . ((&lines * 13 + 26) / 53)
+exe 'vert 4resize ' . ((&columns * 56 + 56) / 113)
+tabnext
+edit note.md
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 26 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 56 + 56) / 113)
+exe '2resize ' . ((&lines * 23 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 56 + 56) / 113)
+exe '3resize ' . ((&lines * 34 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 56 + 56) / 113)
+exe '4resize ' . ((&lines * 15 + 26) / 53)
+exe 'vert 4resize ' . ((&columns * 56 + 56) / 113)
+argglobal
+balt MapCell.cpp
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 20 - ((19 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 20
+normal! 039|
+wincmd w
+argglobal
+if bufexists(fnamemodify("Headers/player.h", ":p")) | buffer Headers/player.h | else | edit Headers/player.h | endif
+if &buftype ==# 'terminal'
+  silent file Headers/player.h
+endif
+balt note.md
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+wincmd w
+argglobal
+if bufexists(fnamemodify("Headers/GameMap.h", ":p")) | buffer Headers/GameMap.h | else | edit Headers/GameMap.h | endif
+if &buftype ==# 'terminal'
+  silent file Headers/GameMap.h
+endif
+balt note.md
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 25 - ((24 * winheight(0) + 17) / 34)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 25
+normal! 020|
+wincmd w
+argglobal
+if bufexists(fnamemodify("Headers/MapCell.h", ":p")) | buffer Headers/MapCell.h | else | edit Headers/MapCell.h | endif
+if &buftype ==# 'terminal'
+  silent file Headers/MapCell.h
+endif
+balt note.md
+setlocal foldmethod=expr
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=99
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 1 - ((0 * winheight(0) + 7) / 15)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 26 + 26) / 53)
+exe 'vert 1resize ' . ((&columns * 56 + 56) / 113)
+exe '2resize ' . ((&lines * 23 + 26) / 53)
+exe 'vert 2resize ' . ((&columns * 56 + 56) / 113)
+exe '3resize ' . ((&lines * 34 + 26) / 53)
+exe 'vert 3resize ' . ((&columns * 56 + 56) / 113)
+exe '4resize ' . ((&lines * 15 + 26) / 53)
+exe 'vert 4resize ' . ((&columns * 56 + 56) / 113)
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
