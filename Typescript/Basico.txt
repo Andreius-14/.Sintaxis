@@ -6,3 +6,10 @@ tsc nameFileTypescript.ts
 convierte y crea nuevo archivo  
 
 .js
+
+
+ ──────────────────────────────────────────────────────────────────────
+ Compilacion 
+
+ - cascada de Compilacion 
+ - mi archivo main se compila con sus enlaces de forma implicita
