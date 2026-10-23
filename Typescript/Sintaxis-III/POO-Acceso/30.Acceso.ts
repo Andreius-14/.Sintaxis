@@ -4,6 +4,8 @@
 // - private 
 //    Funciona dentro de su propia casa  dentro de la clase
 
+// sino no se eespcifiica explicitamente sra privatetee
+//
 export class Persona {
   public nombre: string;
   protected edad: number;
