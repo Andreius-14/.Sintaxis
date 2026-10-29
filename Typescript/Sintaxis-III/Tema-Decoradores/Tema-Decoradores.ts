@@ -2,6 +2,11 @@
 //          │                       Decorardore                       │
 //          ╰─────────────────────────────────────────────────────────╯
 //          debemos habilitar en la conf de typescrip json
+//          nombre: primera - letra en mayuscula
+//          Se habilita en configuracion
+//         - No abusar de los decoradores 
+//
+//         Son metadados que se añadenal comportamiento
 function PersonaDec(target: Function) {
   console.log(target);
 
