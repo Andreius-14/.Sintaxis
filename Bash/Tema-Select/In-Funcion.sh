@@ -1,4 +1,3 @@
-
 # Asigna Archivo a la Variable $archivo
 
 seleccionar_archivo() {
@@ -12,11 +11,3 @@ seleccionar_archivo() {
     fi
   done
 }
-
-# Leer el archivo línea por línea y ejecutar el comando antes de cada línea
-while IFS= read -r linea; do
-
-  # Podemos aplicar Interaccion Por Linea
-
-  echo "$linea"
-done < "$archivo"

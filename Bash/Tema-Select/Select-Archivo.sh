@@ -1,9 +1,11 @@
+#!/bin/bash
 # Menu de Opciones - Selecciona Archivo
 echo "Seleccione el archivo de comandos:"
 
 select archivo in *; do
   # Verificar si el archivo existe
   if [ -f "$archivo" ]; then
+    echo "Existe"
     # Leer el archivo línea por línea
     # while IFS= read -r line; do
     #   # Ejecutar la función para cada línea
