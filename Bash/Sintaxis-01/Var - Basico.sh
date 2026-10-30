@@ -48,32 +48,4 @@ echo "Hoy es $FECHA_HOY en $DIRECTORIO_ACTUAL"
 
 FECHA_HOY=`date +%Y-%m-%d`
 
-#          ╭──────────────────────────────────────────────────────────╮
-#          │  Modificadores y asignaciones condicionales (Parámetros  │
-#          │                       por defecto)                       │
-#          ╰──────────────────────────────────────────────────────────╯
-# ${VARIABLE:-valor}	Si VARIABLE no está definida o está vacía, devuelve valor (sin modificar la variable).
-# ${VARIABLE:=valor}	Si VARIABLE no está definida o está vacía, le asigna valor y lo devuelve.
-# ${VARIABLE:+valor}	Si VARIABLE está definida y no está vacía, devuelve valor; de lo contrario, devuelve vacío.
-#
-# Si el usuario no pasa un argumento, usar "guest" por defecto
-USUARIO="${1:-guest}"
-echo "Bienvenido, $USUARIO"
 
-#          ╭──────────────────────────────────────────────────────────╮
-#          │     Variables especiales del sistema (Predefinidas)      │
-#          ╰──────────────────────────────────────────────────────────╯
-# El shell te asigna automáticamente variables de control que puedes usar en cualquier momento:
-
-
-# $0: El nombre del script actual.
-#
-# $1, $2, ...: Los argumentos pasados al script en la línea de comandos.
-#
-# $#: La cantidad de argumentos pasados.
-#
-# $?: El código de salida del último comando ejecutado (0 si fue bien, distinto de 0 si falló).
-#
-# $$: El ID de proceso (PID) actual del script.
-#
-# $USER: El nombre del usuario que ejecuta el script.
