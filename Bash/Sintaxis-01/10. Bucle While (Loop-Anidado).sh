@@ -1,4 +1,3 @@
-
 n=0
 i=1
 c=1
@@ -17,8 +16,8 @@ done
 # Mensaje Final
 if [[ $c -eq 2 ]]; then
   echo "El Numero Es Primo"
-  else
-    echo "El Numero No Es Primo"
+else
+  echo "El Numero No Es Primo"
 fi
 
 exit 0

@@ -12,4 +12,3 @@ echo "Nombre Mauro del Listado Nombre: " ${ListadoNombres[3]}
 
 echo "Datos del Listado Conjunto: " ${ListadoConjunto[*]}
 echo "Datos del Listado Conjunto: " ${ListadoConjunto[0]} ${ListadoConjunto[1]}
-

@@ -1,8 +1,10 @@
 #!/bin/sh
 
 #          ╭──────────────────────────────────────────────────────────╮
-#          │            1. Variables Globales por Defecto             │
+#          │            1.  Globales por Defecto                      │
 #          ╰──────────────────────────────────────────────────────────╯
+
+# - Cuando se crea la variables ahi es global 
 
 mi_funcion() {
     MENSAJE="Hola desde la función" # Se declara aquí

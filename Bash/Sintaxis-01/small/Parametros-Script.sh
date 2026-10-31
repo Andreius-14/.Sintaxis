@@ -1,25 +1,33 @@
 #          ╭──────────────────────────────────────────────────────────╮
-#          │     Variables especiales del sistema (Predefinidas)      │
+#          │                   variables de control                   │
 #          ╰──────────────────────────────────────────────────────────╯
-# El shell te asigna automáticamente variables de control que puedes usar en cualquier momento:
+#          - La variables se optienes al usuario pasarlas explicitamente fuera del script 
+#          - tambien al llamar a una funcion y el codigo pasa parametros 
 
-
-# $0: El nombre del script actual.
-#
-# $1, $2, ...: Los argumentos pasados al script en la línea de comandos.
-#
-# $#: La cantidad de argumentos pasados.
-#
-# $?: El código de salida del último comando ejecutado (0 si fue bien, distinto de 0 si falló).
-#
-# $$: El ID de proceso (PID) actual del script.
-#
-# $USER: El nombre del usuario que ejecuta el script.
+# Si el usuario no pasa un argumento, usar "guest" por defecto
+USUARIO="${1:-guest}"
+echo "Bienvenido, $USUARIO"
 
 $0          # nombre del script
 $1, $2...   # argumentos
-$#          # cantidad de argumentos
 $@          # todos los argumentos (separados)
 $*          # todos los argumentos (como un solo string)
-$?          # código de salida del último comando
+
+$#          # cantidad de argumentos
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                           Data                           │
+#          ╰──────────────────────────────────────────────────────────╯
+
+$?          # código de salida del último comando (0 si fue bien, distinto de 0 si falló).
 $$          # PID del script actual
+
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                   Variables de Entorno                   │
+#          ╰──────────────────────────────────────────────────────────╯
+
+$USER       # Nombre del usuario que ejecuta el script
+$HOME       # Directorio home del usuario
+$PATH       # Rutas de búsqueda de comandos
+$PWD        # Directorio actual

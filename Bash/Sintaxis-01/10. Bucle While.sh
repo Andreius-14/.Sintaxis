@@ -1,4 +1,3 @@
-
 ListadoNumeros=(1 2 3 4 5 6 7 8 9)
 ListadoNombres=(Diego Juan Rosa Mauro)
 ListadoConjunto=({1..100} {A..Z})
@@ -15,15 +14,14 @@ echo "=============================================="
 # TABLA DE MULTIPLICAR
 read -p "Ingrese un numero: " numeroUsuario
 
-for num in ${ListadoNumeros[*]}
-do
-  echo "Numeros Iterados $numeroUsuario * $num = " $((numeroUsuario*num)) #Interpolacion
+for num in ${ListadoNumeros[*]}; do
+  echo "Numeros Iterados $numeroUsuario * $num = " $((numeroUsuario * num)) #Interpolacion
 done
 
 echo "============================================="
 
 while [[ $numero -ne 10 ]]; do
-  echo "Numero Iterado $numeroUsuario * $num = " $((numeroUsuario*num))  
+  echo "Numero Iterado $numeroUsuario * $num = " $((numeroUsuario * num))
   numero=$((numero + 1))
 done
 exit 0

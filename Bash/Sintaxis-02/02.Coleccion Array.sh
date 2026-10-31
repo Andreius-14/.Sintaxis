@@ -1,24 +1,51 @@
 #!/bin/bash
 
-# 1. Declarar e inicializar un array
 frutas=("manzana" "pera" "plátano" "uva")
-
-# 2. Agregar un elemento al final
 frutas+=("naranja")
 
-# 3. Acceder a un elemento por su índice
-echo "La primera fruta es: ${frutas[0]}" # manzana
+frutas+=("naranja")                # añadir
+echo "Primera fruta: ${frutas[0]}" # manzana
 
-# 4. Obtener la longitud total del array
-echo "Total de frutas: ${#frutas[@]}"
+echo "Indices: ${!frutas[@]}"
+echo "Longitud: ${#frutas[@]}"
+echo "Todas: ${frutas[@]}"
 
 # 5. Iterar sobre todos los elementos
 for fruta in "${frutas[@]}"; do
-    echo "- $fruta"
+  echo "- $fruta"
 done
 
-frutas=("manzana" "pera" "uva")
-echo ${frutas[0]}
-echo ${frutas[@]}           # todos
-echo ${#frutas[@]}          # cantidad
-frutas+=("naranja")         # añadir
+frutas=("manzana" "pera" "plátano" "uva")
+
+# Borrar un elemento específico (ej: "pera" que está en el índice 1)
+unset 'frutas[1]'
+
+echo "Indices restantes: ${!frutas[@]}"
+# Resultado: Indices restantes: 0 2 3 (El índice 1 queda vacío/hueco)
+
+# Borrar el array por completo
+unset frutas
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                     copia con filtro                     │
+#          ╰──────────────────────────────────────────────────────────╯
+
+frutas=("manzana roja" "pera verde" "plátano amarillo")
+
+# Cambiar la palabra "verde" por "madura" en todo el array
+frutas_modificadas=("${frutas[@]//verde/madura}")
+
+echo "${frutas_modificadas[@]}"
+# Resultado: manzana roja pera madura plátano amarillo
+#
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                     cortar - Extraer                     │
+#          ╰──────────────────────────────────────────────────────────╯
+
+frutas=("manzana" "pera" "plátano" "uva" "naranja")
+
+# Salta el índice 0 y toma los siguientes 3 elementos
+sub_array=("${frutas[@]:1:3}")
+
+echo "${sub_array[@]}"
+# Resultado: pera plátano uva
