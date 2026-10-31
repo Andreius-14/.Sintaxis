@@ -16,3 +16,9 @@ echo "Total de frutas: ${#frutas[@]}"
 for fruta in "${frutas[@]}"; do
     echo "- $fruta"
 done
+
+frutas=("manzana" "pera" "uva")
+echo ${frutas[0]}
+echo ${frutas[@]}           # todos
+echo ${#frutas[@]}          # cantidad
+frutas+=("naranja")         # añadir

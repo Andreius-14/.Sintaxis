@@ -1,21 +1,4 @@
-#          ╭──────────────────────────────────────────────────────────╮
-#          │  Modificadores y asignaciones condicionales (Parámetros  │
-#          │                       por defecto)                       │
-#          ╰──────────────────────────────────────────────────────────╯
-# ${VARIABLE:-valor}	Si VARIABLE no está definida o está vacía, devuelve valor (sin modificar la variable).
-# ${VARIABLE:=valor}	Si VARIABLE no está definida o está vacía, le asigna valor y lo devuelve.
-# ${VARIABLE:+valor}	Si VARIABLE está definida y no está vacía, devuelve valor; de lo contrario, devuelve vacío.
-#
-# Si el usuario no pasa un argumento, usar "guest" por defecto
-USUARIO="${1:-guest}"
-echo "Bienvenido, $USUARIO"
 
-# Equivalente a: let nombre = process.env.NOMBRE || "Sin nombre";
-nombre="${NOMBRE:-Sin nombre}"
-web="${WEB:-no tengo web}"
-
-echo "Hola $nombre"
-echo "Mi web es $web"
 
 
 # En Bash, los operadores lógicos 

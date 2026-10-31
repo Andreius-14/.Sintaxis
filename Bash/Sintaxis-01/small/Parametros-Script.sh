@@ -15,3 +15,11 @@
 # $$: El ID de proceso (PID) actual del script.
 #
 # $USER: El nombre del usuario que ejecuta el script.
+
+$0          # nombre del script
+$1, $2...   # argumentos
+$#          # cantidad de argumentos
+$@          # todos los argumentos (separados)
+$*          # todos los argumentos (como un solo string)
+$?          # código de salida del último comando
+$$          # PID del script actual
