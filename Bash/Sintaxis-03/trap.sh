@@ -84,3 +84,9 @@ trap 'error_handler $LINENO' ERR
 #   ERR,      "Cuando cualquier comando dentro del script devuelve un código de error (ideal usarlo con set -e).
 #   SIGINT,   "Cuando el usuario presiona Ctrl + C.
 #   SIGTERM,  "Cuando el sistema operativo u otro programa le pide al script que se cierre de forma ordenada (es la señal por defecto de kill).
+#
+#
+
+
+# Call a function on window resize.
+trap 'code_here' SIGWINCH
