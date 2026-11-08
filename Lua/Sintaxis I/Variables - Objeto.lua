@@ -6,3 +6,8 @@ local persona = {
 
 print(persona.nombre)  -- "Andreius"
 print(persona.edad)    -- 25
+
+
+local greet = function (name) 
+    print(name)
+end

@@ -1,5 +1,7 @@
+-- No inicia en 0 
 
 local colors = { "red", "green", "blue" }
+
 
 print(colors[1]) -- red
 
